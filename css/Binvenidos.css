@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:#000;
+    background-size: cover;
+    opacity: 8.5;
+}
+
+/* Titulo */
+
+.titulo{
+    margin: auto;
+    color: #D4AF37;
+    max-height: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 42%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* ANIMACION DEL SLIDER */
+
+.box
+{
+    position: absolute;
+    left: 20%;
+    width: 180px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%
+    {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.box span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*45deg)) translateZ(250px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0000004d);
+}
+
+.box span img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FORMULARIO DE LOGEO */
+.container{
+    width: 45%;
+    position: relative;
+    padding: 15px;
+    margin:auto;
+    border-radius:5px;
+}  
+
+.formulario{
+    border-radius: 5px;
+}
+
+.h1{
+    text-align: center;
+    color: #D4AF37;
+    font-size: 40px;  
+    margin-top: -25%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+input[type="email"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+.input-contenedor{
+    margin-bottom: 15px;
+    padding: 15px;
+    margin: auto;
+}
+
+.buttom{
+    border:none;
+    width: 95%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttom:hover{
+    background: rgba(58, 158, 83, 0.559);
+}
+
+@media(min-width:768px)
+{
+    .formulario{
+        margin:auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
